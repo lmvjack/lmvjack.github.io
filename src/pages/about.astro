@@ -1,0 +1,20 @@
+---
+import Landing from '../components/index/Landing.astro';
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+---
+
+<Layout>
+  <div class="w-full h-full flex flex-col justify-center items-center gap-2">
+    <h1 class="text-white text-4xl font-mono">
+      About
+    </h1>
+    <p class="text-text-primary font-sans">
+      I enjoy <span class="text-white font-medium">cybersecurity</span> and everything <span class="text-white font-medium">low-level</span>. I'm exploring <span class="text-white font-medium">binary exploitation (pwn)</span> playing ctf with <a href="https://pwnissa.it" target="_blank" class="text-amber-200 underline">pwnissa</a>, focusing right now on kernel exploitation.
+    </p>
+
+    <p class="text-text-primary font-sans">
+      Accademically, I'm pursuing a <span class="text-white font-medium">bachelor's degree in computer science</span> at the university of Genoa (Italy); in the meantime I work as <span class="text-white font-medium">fullstack dev</span>.
+    </p>
+  </div>
+</Layout>

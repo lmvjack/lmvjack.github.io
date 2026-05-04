@@ -1,6 +1,6 @@
 ---
-import { Font } from 'astro:assets';
 import Navbar from '../components/global/Navbar.astro';
+import { Font } from 'astro:assets';
 ---
 
 <!doctype html>
@@ -15,14 +15,12 @@ import Navbar from '../components/global/Navbar.astro';
 		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>e3py</title>
+		<title>Writeup</title>
     
 	</head>
-	<body>
-    <div class="w-full h-full flex flex-col gap-4 p-2 md:p-3">
-      <Navbar></Navbar>
-		  <slot />
-    </div>
+	<body class="flex flex-col gap-4 p-3">
+    <Navbar></Navbar>
+		<slot />
 	</body>
 </html>
 

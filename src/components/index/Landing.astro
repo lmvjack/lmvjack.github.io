@@ -1,0 +1,227 @@
+---
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+import Container from '../global/Container.vue';
+import propic from '../../assets/propic.jpg';
+import Navbar from '../global/Navbar.astro';
+import ascii from '../../assets/ascii.svg';
+import Button from '../global/Button.vue';
+import Terminal from './Terminal.vue';
+
+// icons
+import linkedin from '../../assets/icons/linkedin.svg?raw';
+import github from '../../assets/icons/github.svg?raw';
+
+const writeup = await getEntry('writeups', 'exception-handler-easy');
+const range = (n: number) => Array.from({ length: n }, (_, i) => i);
+---
+
+<section class="w-full h-fit flex justify-center items-center">
+
+  <!-- Outer grid -->
+  <div class="w-full lg:w-4/5 flex flex-col flex-center items-center gap-0 border-l border-t border-gray-100/15">
+    
+    <!-- First row -->
+    <div class="w-full flex flex-col md:grid md:grid-cols-3">
+      <Container class="md:col-span-2">
+        <div class="w-full h-full flex flex-col md:flex-row md:justify-end static md:relative">
+
+          <!-- Left/upper content -->
+          <div class="w-full lg:w-3/5 h-full flex flex-col gap-3 static md:absolute md:left-0 md:top-1/4 z-10 animate-fadein">
+            <div class="w-fit flex flex-col gap-2">
+              <!-- Name and propic -->
+              <div class="w-full flex flex-row items-end gap-2">
+                <div class="w-fit h-fit relative">
+                  <img src={propic.src} class="w-12 rounded-4xl" />
+                  <div class="bg-white w-3 h-3 rounded-2xl absolute top-0 right-0"></div>
+                  <div class="bg-white w-2 h-2 rounded-2xl absolute top-0 right-0 animate-ping"></div>
+                </div>
+                <h1 class="text-white text-4xl font-mono font-medium">
+                  e3py
+                </h1>
+              </div>
+
+              <!-- Short description -->
+              <div class="w-full">
+                <p class="text-white text-lg font-sans">
+                  Personal website for ctf writeups, projects showcase, linux ricing display and more.
+                </p>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="w-fit h-fit flex flex-row items-center gap-2">
+              <a href="mailto:e3py@pwnissa.it" target="_blank">
+                <Button text="Contact me" size="md" mode="solid" />
+              </a>
+              <div class="flex flex-row flex-wrap gap-2 ">
+                <a href="https://github.com/lmvjack" target="_blank">
+                  <Button icon={github} size="md" mode="outline" />
+                </a>
+                <a href="https://www.linkedin.com/in/giacomo-q-a252283b9" target="_blank">
+                  <Button icon={linkedin} size="md" mode="outline" />
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right/lower content -->
+          <Image class="w-full md:w-lg opacity-40 z-0" src={ascii} alt="Ascii art planet" />
+        </div>
+      </Container>
+
+      <Container class="md:col-span-1 pr-0! pb-0!">
+        <div class="w-full h-full flex flex-col">
+
+          <!-- Content -->
+          <div class="flex flex-col gap-2 pr-5">
+            <h2 class="text-white text-xl font-mono">
+              Writeups
+            </h2>
+            <p class="text-text-primary font-sans">
+              Trying to "put on paper" what I learn solving ctfs. Wish I had more time to do it tho.
+            </p>
+            <a href="/writeups">
+              <Button text="See archive" size="md" mode="solid" />
+            </a>
+          </div>
+
+          <!-- Drawing -->
+           <div class="w-full h-50 md:h-full flex justify-end items-end">
+            <div class="bg-terminal-background w-2/3 h-2/3 hover:h-5/6 hover:w-5/6 duration-700 flex flex-col items-center rounded-tl-lg overflow-hidden">
+
+              <!-- Navbar -->
+              <div class="w-full h-fit flex flex-row items-center px-2 py-1">
+                <div class="w-fit flex flex-row justify-center gap-1">
+                  <div class="bg-red-400 w-2 h-2 rounded-3xl"></div>
+                  <div class="bg-yellow-300 w-2 h-2 rounded-3xl"></div>
+                  <div class="bg-green-500 w-2 h-2 rounded-3xl"></div>
+                </div>
+                <div class="w-full flex justify-center items-center">
+                  <p class="text-text-primary text-sm font-mono mr-5">
+                    Writeup
+                  </p>
+                </div>
+              </div>
+
+              <!-- Content skeleton -->
+               {range(5).map((i) => (
+                <div class="w-40 h-fit flex flex-col items-center gap-1 mb-1 animate-pulse duration-500">
+                  <div class="w-full h-fit flex flex-row justify-center items-center gap-1">
+                    <div class="w-10 h-1 bg-gray-100/20 rounded"></div>
+                    <div class="w-full h-1 bg-gray-100/20 rounded"></div>
+                  </div>
+                  <div class="w-full h-fit flex flex-row justify-center items-center gap-1">
+                    <div class="w-full h-1 bg-gray-100/20 rounded"></div>
+                    <div class="w-10 h-1 bg-gray-100/20 rounded"></div>
+                  </div>
+                  <div class="w-full h-fit flex flex-row justify-center items-center gap-1">
+                    <div class="w-full h-1 bg-gray-100/20 rounded"></div>
+                  </div>
+                </div>
+              ))}
+
+            </div>
+           </div>
+
+        </div>
+      </Container>
+    </div>
+
+    <!-- Second row -->
+    <Container class="w-full h-fit">
+      <div class="w-full h-full flex flex-col justify-between items-center gap-4">
+        <div class="w-full h-fit flex flex-col items-center gap-0">
+          <h2 class="text-white text-xl">
+            About
+          </h2>
+          <div class="w-full md:w-1/2 flex flex-col items-center gap-2">
+            <p class="text-text-primary text-center font-sans">
+              I started programming out of passion during middle school. Creating my stuff and seeing my ideas take shape from code really amazed me.
+            </p>
+            <a href="/about">
+              <Button text="Read more" size="md" mode="solid" />
+            </a>
+          </div>
+
+        </div>
+        <Terminal />
+      </div>
+    </Container>
+
+    <!-- Third row -->
+    <div class="w-full h-fit flex flex-col md:grid md:grid-cols-3">
+      <Container>
+        <!-- Post preview -->
+        <div class="w-full h-full flex flex-col items-start">
+           <div class="w-full h-full flex flex-col gap-2">
+              <h1 class="text-white text-xl font-mono">
+                <span class="text-purple-500">#1</span> Writeup
+              </h1>
+              <div class="text-white">
+                <h1 class="text-lg font-mono">{writeup?.data.title}</h1>
+                <p class="text-text-primary text-md font-sans">
+                  {writeup?.data.description}
+                </p>
+                <p class="text-text-primary text-sm font-sans mt-2">{writeup?.data.pubDate.toDateString()}</p>
+              </div>
+           </div>
+          <div class="w-full flex justify-end">
+            <a href={`/writeups/${writeup?.id}`}>
+              <Button text="Read full" size="md" mode="solid" />
+            </a>
+          </div>
+        </div>
+      </Container>
+
+      <Container>
+        <!-- Post placeholder -->
+        <div class="w-full h-full flex flex-col items-start justify-between">
+          <div class="w-full h-full flex flex-col gap-2">
+            <h1 class="text-white text-xl font-mono">
+              <span class="text-purple-500">#2</span> Writeup
+            </h1>
+            <div class="text-white">
+              <h1 class="text-lg font-mono">Work in progress</h1>
+              <p class="text-text-primary text-md font-sans">
+                Work in progress
+              </p>
+              <p class="text-text-primary text-sm font-sans mt-2">Work in progress</p>
+            </div>
+          </div>
+        
+          <div class="w-full flex justify-end">
+            <a href="">
+              <Button text="Read full" size="md" mode="solid" />
+            </a>
+          </div>
+        </div>
+      </Container>
+
+      <Container>
+        <div class="w-full h-full flex flex-col">
+
+          <!-- Content -->
+          <div class="w-full h-full flex flex-col justify-between gap-2 pr-5">
+            <div class="w-full h-full flex flex-col gap-2">
+              <h2 class="text-white text-xl font-mono">
+                Work
+              </h2>
+              <p class="text-text-primary font-sans">
+                My work experience and showcase of some personal projects.
+              </p>
+            </div>
+            <div class="w-full flex justify-end">
+              <a href="/work">
+                <Button text="See more" size="md" mode="solid" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </div>
+
+  </div>
+</section>

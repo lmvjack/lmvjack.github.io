@@ -1,0 +1,38 @@
+@import "./writeup.css";
+@import "tailwindcss";
+
+@theme {
+
+  
+  /* fonts */
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+
+   /* colors */
+  --color-background-primary: #000000;
+  --color-text-primary: #a1a1aa;
+
+  --color-terminal-background: #0a0a0a;
+
+  /* animations */
+  --animate-wiggle: wiggle 1s ease-in-out infinite;  
+  @keyframes wiggle {
+    0%, 
+    100%{ 
+      transform: rotate(-3deg);    
+    }    
+    50%{
+      transform: rotate(3deg);
+    }  
+  }
+
+  --animate-fadein: fadein 1s ease-in forwards;  
+  @keyframes fadein {
+    0%{
+      opacity: 0;   
+    }
+    100%{
+      opacity: 1;   
+    }
+  }
+}

@@ -1,0 +1,35 @@
+---
+const pathname = Astro.url.pathname === '/' ? '/index' : '/' + (Astro.url.pathname.split('/'))[1]
+---
+<div class="bg-purple-500/5 w-full h-fit flex justify-center items-center border border-purple-400/30 rounded-2xl px-5 py-1">
+  <div class="w-full flex flex-row justify-between">
+    <p class="text-white text-md font-mono">
+      <span class="text-purple-400">
+        ~
+      </span> 
+      {pathname}
+      <span class="text-sm text-text-primary">
+        $
+      </span>
+
+    </p>
+
+    <div class="text-text-primary text-sm flex flex-row gap-4 font-mono">
+      <a href="/">
+        <p class="hover:text-white">
+          home
+        </p>
+      </a>
+      <a href="/writeups">
+        <p class="hover:text-white">
+          writeups
+        </p>
+      </a>
+      <a href="/work">
+        <p class="hover:text-white">
+          work
+        </p>
+      </a>
+    </div>
+  </div>
+</div>
