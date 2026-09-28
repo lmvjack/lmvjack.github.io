@@ -36,7 +36,7 @@ const info: terminalInfo[] = [
 </script>
 
 <template>
-  <div class="w-fit h-fit flex flex-col justify-center items-start gap-0 border border-gray-100/15 rounded-lg overflow-hidden">
+  <div class="w-fit md:w-full h-fit flex flex-col justify-center items-start gap-0 border border-gray-100/15 rounded-lg overflow-hidden">
 
     <!-- Bar -->
      <div class="bg-black w-full h-fit flex flex-row items-center justify-between px-4 py-2">
@@ -47,12 +47,12 @@ const info: terminalInfo[] = [
      </div>
 
     <!-- Content -->
-    <div class="bg-[#0a0a0a] w-full h-fit flex flex-col justify-center items-start p-3 gap-2">
+    <div class="bg-terminal-background w-full h-fit flex flex-col justify-center items-start p-3 gap-2">
 
       <div class="w-fit h-fit flex flex-col gap-3">
         <!--     Bar -->       
         <div class="flex flex-row justify-start items-start">
-          <div class="flex flex-col justify-start items-start gap-[6px]">
+          <div class="flex flex-col justify-start items-start gap-1.5">
             <p class="text-text-primary font-mono">
               ┌─ <span class="text-blue-200 text-sm">~/index</span>
             </p>
@@ -93,7 +93,7 @@ const info: terminalInfo[] = [
 
         <!--     Bar -->       
         <div class="flex flex-row justify-start items-start mb-3">
-          <div class="flex flex-col justify-start items-start gap-[6px]">
+          <div class="flex flex-col justify-start items-start gap-1.5">
             <p class="text-text-primary font-mono">
               ┌─ <span class="text-blue-200 text-sm">~/index</span>
             </p>

@@ -132,13 +132,13 @@ const range = (n: number) => Array.from({ length: n }, (_, i) => i);
 
     <!-- Second row -->
     <Container class="w-full h-fit">
-      <div class="w-full h-full flex flex-col justify-between items-center gap-4">
-        <div class="w-full h-fit flex flex-col items-center gap-0">
-          <h2 class="text-white text-xl">
+      <div class="w-full h-full flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="w-full h-fit flex flex-col items-center md:items-start gap-0">
+          <h2 class="text-white md:text-left text-xl">
             About
           </h2>
-          <div class="w-full md:w-1/2 flex flex-col items-center gap-2">
-            <p class="text-text-primary text-center font-sans">
+          <div class="w-full md:w-1/2 flex flex-col items-center md:items-start gap-2">
+            <p class="text-text-primary text-center md:text-left font-sans">
               I started programming out of passion during middle school. Creating my stuff and seeing my ideas take shape from code really amazed me.
             </p>
             <a href="/about">
