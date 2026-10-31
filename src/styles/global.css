@@ -1,6 +1,10 @@
 @import "./writeup.css";
 @import "tailwindcss";
 
+@utility animate-delay-* {
+  animation-delay: calc(--value(integer) * 1ms);
+}
+
 @theme {
 
   
@@ -9,7 +13,7 @@
   --font-mono: var(--font-geist-mono);
 
    /* colors */
-  --color-background-primary: #000000;
+  --color-background-primary: #000;
   --color-text-primary: #a1a1aa;
 
   --color-terminal-background: #0a0a0a;
@@ -26,13 +30,30 @@
     }  
   }
 
-  --animate-fadein: fadein 1s ease-in forwards;  
-  @keyframes fadein {
-    0%{
-      opacity: 0;   
+  --animate-appear: appear 1s linear forwards;  
+  @keyframes appear {
+    99%{
+      visibility: hidden; 
     }
     100%{
-      opacity: 1;   
+      visibility: visible;
+    }
+  }
+
+  --animate-cursor: cursor 1s linear infinite;  
+  @keyframes cursor {
+    50%{
+      visibility: hidden; 
+    }
+    100%{
+      visibility: visible;
+    }
+  }
+
+  --animate-rotate: rotate 1s linear infinite;  
+  @keyframes rotate {
+    to{
+      transform: rotate(360deg); 
     }
   }
 }

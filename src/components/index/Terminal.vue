@@ -36,14 +36,14 @@ const info: terminalInfo[] = [
 </script>
 
 <template>
-  <div class="w-fit md:w-full h-fit flex flex-col justify-center items-start gap-0 border border-gray-100/15 rounded-lg overflow-hidden">
+  <div class="w-full md:w-full h-fit flex flex-col justify-center items-start gap-0 border border-gray-100/15 rounded-lg overflow-hidden">
 
     <!-- Bar -->
      <div class="bg-black w-full h-fit flex flex-row items-center justify-between px-4 py-2">
       <p class="text-white text-sm font-mono">
-        Ghostty
+        e3py@pc
       </p>
-      <Button :icon="darkmode" color="white" size="sm" mode="soft" />
+      <!-- <Button :icon="darkmode" color="white" size="sm" mode="soft" /> -->
      </div>
 
     <!-- Content -->
@@ -57,7 +57,7 @@ const info: terminalInfo[] = [
               ┌─ <span class="text-blue-200 text-sm">~/index</span>
             </p>
             <p class="text-text-primary leading-0 font-mono">
-              └─ <span class="text-amber-200">$</span> <span class="text-green-200">fastfetch</span>
+              └─ <span class="text-amber-200">$</span> <span class="text-green-200">./about.sh</span>
             </p>
           </div>
         </div>
@@ -72,10 +72,10 @@ const info: terminalInfo[] = [
               e3py@github.io
             </p>
             <div 
-              v-for="i in info" 
+              v-for="(i, index) in info" 
               :key="i.title" 
-              class="flex flex-row gap-2"
-            >
+              class="flex flex-row gap-2 animate-appear invisible animate-delay-100"
+              >
               <div class="w-5" :class="i.color" v-html="i.icon" />
 
               <p 
@@ -90,7 +90,16 @@ const info: terminalInfo[] = [
 
           </div>
         </div>
-
+        
+        <div class="flex flex-col justify-start items-start">
+          <p class="text-white animate-appear invisible animate-delay-300">
+            <span class="text-blue-200">[+]</span> 
+            Personal projects and more at 
+            <a class="text-yellow-100 underline" href="/work">work</a>
+          </p>
+          <p class="text-white animate-appear invisible animate-delay-800"><span class="text-blue-200">[+]</span> CTF writeups and cybersec related at <a class="text-yellow-100 underline" href="/writeups">writeups</a></p>
+        </div>
+        
         <!--     Bar -->       
         <div class="flex flex-row justify-start items-start mb-3">
           <div class="flex flex-col justify-start items-start gap-1.5">
@@ -98,7 +107,7 @@ const info: terminalInfo[] = [
               ┌─ <span class="text-blue-200 text-sm">~/index</span>
             </p>
             <p class="text-text-primary leading-0 font-mono">
-              └─ <span class="text-amber-200">$</span>
+              └─ <span class="text-amber-200">$<span class="animate-cursor invisible">|</span></span>
             </p>
           </div>
         </div>
